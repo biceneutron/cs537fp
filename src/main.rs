@@ -5,7 +5,6 @@ mod io;
 mod mm;
 mod networking;
 
-// mm
 fn main() {
     let args: Vec<String> = env::args().collect();
     let task = &args[1];
@@ -79,7 +78,7 @@ fn main() {
             networking::start_server(host_addr);
         }
         _ => {
-            println!("avalable tasks: mm, coding, io, networking");
+            println!("avalable tasks: mm, coding, io, networking, tcp-server");
             return;
         }
     }

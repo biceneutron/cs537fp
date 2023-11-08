@@ -110,17 +110,25 @@ run-mm-native-1000:
 	./target/release/wasm-tasks mm \
 	./data/mm/1000-1000-1000/a.txt ./data/mm/1000-1000-1000/b.txt ./data/mm/1000-1000-1000/out.txt 1000 1000 1000
 
-run-mm-wasi-3:
+run-mm-wasi-10:
 	wasmtime --dir . ./target/wasm32-wasi/release/wasm-tasks.wasm mm \
-	./data/mm/3-3-3/a.txt ./data/mm/3-3-3/b.txt ./data/mm/3-3-3/out.txt 3 3 3
+	./data/mm/10-10-10/a.txt ./data/mm/10-10-10/b.txt ./data/mm/10-10-10/out.txt 10 10 10
+
+run-mm-wasi-50:
+	wasmtime --dir . ./target/wasm32-wasi/release/wasm-tasks.wasm mm \
+	./data/mm/50-50-50/a.txt ./data/mm/50-50-50/b.txt ./data/mm/50-50-50/out.txt 50 50 50
 
 run-mm-wasi-100:
 	wasmtime --dir . ./target/wasm32-wasi/release/wasm-tasks.wasm mm \
 	./data/mm/100-100-100/a.txt ./data/mm/100-100-100/b.txt ./data/mm/100-100-100/out.txt 100 100 100
 
-run-mm-wasi-3000:
+run-mm-wasi-500:
 	wasmtime --dir . ./target/wasm32-wasi/release/wasm-tasks.wasm mm \
-	./data/mm/3000-3000-3000/a.txt ./data/mm/3000-3000-3000/b.txt ./data/mm/3000-3000-3000/out.txt 3000 3000 3000
+	./data/mm/500-500-500/a.txt ./data/mm/500-500-500/b.txt ./data/mm/500-500-500/out.txt 500 500 500
+
+run-mm-wasi-1000:
+	wasmtime --dir . ./target/wasm32-wasi/release/wasm-tasks.wasm mm \
+	./data/mm/1000-1000-1000/a.txt ./data/mm/1000-1000-1000/b.txt ./data/mm/1000-1000-1000/out.txt 1000 1000 1000
 
 
 # Huffman coding
