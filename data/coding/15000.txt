@@ -1,0 +1,147 @@
+After Earlier Scrub, SpaceX Starlink Launch Streaks Across Brevard Sky En Route To Orbit
+After a Sunday night scrub, SpaceX's launch director made a welcome announcement during a subsequent second try Monday night at Cape Canaveral Space Force Station.
+
+"Go for launch," he said with 45 seconds remaining on the countdown clock.
+
+The Falcon 9 rocket rose skyward from Launch Complex 40 shortly afterward as darkness fell at 7:20 EDT, carrying a payload of 23 Starlink internet-beaming satellites into low-Earth orbit.
+
+SpaceX's Starlink 6-25 mission marked the record-breaking 59th orbital launch this year from Cape Canaveral Space Force Station and Kennedy Space Center.
+
+The Falcon 9 first-stage booster landed aboard SpaceX's drone ship Just Read the Instructions out on the Atlantic Ocean, completing its eighth mission.
+
+SpaceX started lifting its second-generation Starlink V2 Mini internet satellites into low-Earth orbit earlier this year from Cape Canaveral. Earlier this month, SpaceX founder and CEO Elon Musk said there is “a good chance” that the company’s far-larger Texas-based Starship Super Heavy rocket will start deploying V3 Starlink satellites into orbit in roughly a year.
+
+“With Falcon 9, we’ve gone pretty far with reusability. The booster … it’s now highly unusual for the booster to not come back and land. It’s gotten quite normal for the booster to come back and land,” Musk said during an Oct. 5 International Astronautical Congress fireside chat.
+
+A SpaceX Falcon 9 rocket carrying 23 Starlink satellites lifts off Monday night from Cape Canaveral Space Force Station.
+
+Case in point: On Sept. 20, a Falcon 9 first stage booster logged its record-breaking 17th flight during a Starlink flight from Launch Complex 40, touching down on the drone ship A Shortfall of Gravitas out on the Atlantic Ocean.
+
+“But the Falcon 9 design does not allow for reusability of the upper stage. And the Falcon 9, while reasonably rapid — especially if you’ve got a return-to-launch-site landing — still takes at least a few days to refurbish before you can fly it again,” Musk said during the fireside chat.
+
+“With Starship, actually more profound than the size is the fact that it is designed to be fully and rapidly reusable,” Musk said.
+
+A SpaceX Falcon 9 rocket carrying 23 Starlink satellites lifts off Monday night from Cape Canaveral Space Force Station.
+
+Though SpaceX has yet to announce its next Starlink mission from the Cape, an updated National Geospatial-Intelligence Agency navigational advisory issued Monday night indicates a rocket launch window will open from 6:23 to 10:54 p.M. EDT Friday.
+
+For the latest schedule updates, visit floridatoday.Com/launchschedule.
+
+Rick Neale is a Space Reporter at FLORIDA TODAY (for more of his stories, click here.) Contact Neale at 321-242-3638 or rneale@floridatoday.Com. Twitter/X: @RickNeale1
+
+Space is important to us and that's why we're working to bring you top coverage of the industry and Florida launches. Journalism like this takes time and resources. Please support it with a subscription here.
+
+This article originally appeared on Florida Today: SpaceX Starlink rocket launch streaks across sky Monday at nightfall
+
+SpaceX is gearing up to send yet another batch of Starlink satellites to low-Earth orbit after launching 22 Starlink satellites on Sunday, October 29.
+
+The company is targeting Monday, October 30 for a Falcon 9 launch of 23 Starlink satellites from Space Launch Complex 40 (SLC-40) at Cape Canaveral Space Force Station in Florida. The rocket carrying the satellites will lift off at 7:20 p.M. ET, with seven backup opportunities available starting at 7:52 p.M. ET until 10:22 p.M. ET.
+
+Monday's launch marks the eighth flight for the first stage booster launching this mission, which previously supported Crew-5, GPS III Space Vehicle 06, Inmarsat I6-F2, CRS-28, Intelsat G-37, and two Starlink missions. Following stage separation, the first stage will land on the Just Read the Instructions droneship, which will be stationed in the Atlantic Ocean.
+
+You can watch a live webcast of this Starlink mission on X @SpaceX about five minutes prior to liftoff.
+
+The back-to-back Falcon 9 launches of Starlink satellites take SpaceX one step closer to its goal of providing global connectivity to remote and underserved regions.
+
+
+One Web Low Earth Orbit Satellite Ground Station In St Helena To Operate In Partnership With Sure
+Tuesday, May 16th 2023 - 02:49 UTC
+Full article
+
+OneWeb announced a partnership with Sure, which operates on the Falkland Islands, Saint Helena, and Ascension Island, alongside geosynchronous orbit (GEO) satellite firm Intelsat OneWeb announced a partnership with Sure, which operates on the Falkland Islands, Saint Helena, and Ascension Island, alongside geosynchronous orbit (GEO) satellite firm Intelsat
+The Low Earth Orbit satellite firm OneWeb is set to place a ground station on the island of St. Helena and take capacity on the island’s trunk of the Equiano subsea cable. Reported in the St Helena Independent, One Web has signed a 10-year ground station agreement with local telco Sure.
+
+OneWeb is set to build a ground station at Horse Point, with Sure set to manage the facility. The ground station will then be linked via fiber to the island’s cable landing station at Rupert’s Beach.
+
+Work on the ground station is expected to start ‘fairly shortly,' and be finished by the end of this year.
+
+OneWeb announced a partnership with Sure, which operates on the Falkland Islands, Saint Helena, and Ascension Island, alongside geosynchronous orbit (GEO) satellite firm Intelsat in March 2023 to provide greater coverage to Sure customers.
+
+At the time, Carole Plessy, VP, maritime and Europe at OneWeb, added: “We are excited to support connectivity for some of the most remote communities on the planet through our partnership with Intelsat.”
+
+OneWeb is also set to take 10 percent of St Helena’s share of the Equiano cable capacity. The satellite firm has been in discussions with the St. Helena government since 2017, according to government documents.
+
+First announced in 2019, the Google-led Equiano cable landed at St. Helena in September 2021. It is the only cable landing on the island. The cable, which connects Western Europe to South Africa, lunched last year,
+
+The island is currently reliant on satellite connectivity, which provides upload speeds between 512kbps and 768kbps and download speeds between 1,024kbps and 2,048kbps.
+
+The Independent also adds that a second ground station operator may join OneWeb and use the Horse Point ground station, though didn’t provide details.
+
+St. Helena announced its first satellite ground station policy in 2020, with the goal of luring satellite operators to install infrastructure on the South Atlantic island in tandem with the new cable landing.
+
+American Manufactured Structures & Services (AMSS) delivered the modular Cable Landing Station, with funding from the European Development Fund 11th Round (EDF11).
+
+Maestro Technologies is set to develop an island-wide fiber network by the end of the year, though the project is facing delays.
+
+OneWeb this week also announced that BT confirmed a successful live field trial of a 4G LTE cell site using OneWeb’s LEO network for backhaul in the UK. BT said the results were “highly encouraging.”
+
+Meanwhile, SpaceX rockets launched two additional O3b mPOWER satellites for SES, the Astranis-owned Arcturus broadband satellite, and a ViaSat-3 satellite
+
+Giant Planets Cast A Deadly Pall: How They Can Prevent Life In Other Solar Systems
+Giant gas planets can be agents of chaos, ensuring nothing lives on their Earth-like neighbors around other stars. New studies show, in some planetary systems, the giants tend to kick smaller planets out of orbit and wreak havoc on their climates.
+
+Jupiter, by far the biggest planet in our solar system, plays an important protective role. Its enormous gravitational field deflects comets and asteroids that might otherwise hit Earth, helping create a stable environment for life. However, giant planets elsewhere in the universe do not necessarily protect life on their smaller, rocky planet neighbors.
+
+An Astronomical Journal paper details how the pull of massive planets in a nearby star system are likely to toss their Earth-like neighbors out of the "habitable zone." This zone is defined as the range of distances from a star that are warm enough for liquid water to exist on a planet's surface, making life possible.
+
+Unlike most other known solar systems, the four giant planets in HD 141399 are farther from their star. This makes it a good model for comparison with our solar system where Jupiter and Saturn are also relatively far from the sun.
+
+"It's as if they have four Jupiters acting like wrecking balls, throwing everything out of whack," said Stephen Kane, UC Riverside astrophysicist and author of the journal paper.
+
+Taking data about the system's planets into account, Kane ran multiple computer simulations to understand the effect of these four giants. He wanted specifically to look at the habitable zone in this star system and see if an Earth could remain in a stable orbit there.
+
+"The answer is yes, but it's very unlikely. There are only a select few areas where the giants' gravitational pull would not knock a rocky planet out of its orbit and send it flying right out of the zone," Kane said.
+
+While this paper shows giant planets outside the habitable zone destroying the chances for life, a second, related paper shows how one big planet in the middle of the zone would have a similar effect.
+
+Also published in the Astronomical Journal, this second paper examines a star system only 30 light years away from Earth called GJ 357. For reference, the galaxy is estimated to be 100,000 light years in diameter, so this system is "definitely in our neighborhood," Kane said.
+
+Earlier studies found that a planet in this system, named GJ 357 d, resides in the system's habitable zone and has been measured at about six times the mass of the Earth. However, in this paper titled "Agent of Chaos," Kane shows the mass is likely much bigger.
+
+"It's possible GJ 357 d is as much as 10 Earth masses, which means it's probably not terrestrial, so you couldn't have life on it," Kane said. "Or at least, it would not be able to host life as we know it."
+
+In the second part of the paper, Kane and his collaborator, UCR planetary science postdoctoral scholar Tara Fetherolf, demonstrate that if the planet is much larger than previously believed, it is certain to prevent more Earth-like planets from residing in the habitable zone alongside it.
+
+Though there are also a select few locations in the habitable zone of this system where an Earth could potentially reside, their orbits would be highly elliptical around the star. "In other words, the orbits would produce crazy climates on those planets," Kane said. "This paper is really a warning, when we find planets in the habitable zone, not to assume they are automatically capable of hosting life."
+
+Ultimately, the pair of papers shows how uncommon it is to find the right set of circumstances to host life elsewhere in the universe. "Our work gives us more reasons to be very grateful for the particular planetary configuration we have in our solar system," Kane said.
+
+More information: Stephen R. Kane, Surrounded by Giants: Habitable Zone Stability Within the HD 141399 System, The Astronomical Journal (2023). DOI: 10.3847/1538-3881/acfb01
+
+Stephen R. Kane et al, GJ 357 d: Potentially Habitable World or Agent of Chaos?, The Astronomical Journal (2023). DOI: 10.3847/1538-3881/acff5a
+
+Citation: Giant planets cast a deadly pall: How they can prevent life in other solar systems (2023, October 31) retrieved 31 October 2023 from https://phys.Org/news/2023-10-giant-planets-deadly-pall-life.Html
+
+This document is subject to copyright. Apart from any fair dealing for the purpose of private study or research, no part may be reproduced without the written permission. The content is provided for information purposes only.
+
+
+Space Force To Begin Procurement Of Missile-tracking Satellites For Medium Earth Orbit Constellation
+WASHINGTON — The U.S. Space Force is moving forward with plans to procure 27 missile-defense satellites for a medium Earth orbit constellation — using an acquisition process that mirrors the model adopted by the Space Development Agency for the military’s low Earth orbit architecture.
+
+“We are acquiring our architecture through spiral development, with new capabilities being placed on orbit every two to three years,” said Col. Heather Bogstie, senior materiel leader for missile warning, tracking and defense at the Space Systems Command.
+
+The first nine satellites of a medium Earth orbit (MEO) missile-warning and missile-tracking constellation, called Epoch 1, are projected to launch in 2027. A second procurement of 18 satellites, called Epoch 2, will follow two to three years later, Bogstie said Oct. 19 at the MilSat Symposium in Mountain View, California.
+
+“We are building a multi-layered sensor satellite network  in both higher and lower MEO orbits, designed to sense a variety of missile threats, including the very fast, very dim hypersonic glide vehicles,” she said. 
+
+Two vendors already were selected to supply Epoch 1 satellites: Millennium Space Systems and Raytheon. Both companies won contracts in 2021 to design digital models of MEO tracking satellites. A third vendor, L3Harris Technologies, in June 2023 got a contract to design a third digital prototype. 
+
+Only Millennium Space Systems and Raytheon received development contracts with options to each produce up to three spacecraft for in-orbit demonstrations planned for late 2026. 
+
+Bogstie said “continued and open competition is a central tenet to our acquisition strategy.”
+
+“If you’re not a participant in Epoch 1, there’s no need to worry. There’s a lot more to do,” she added. 
+
+“This is different from traditional satellite development programs because it allows us to insert the latest technology and relevant timelines to defeat the latest threats,” Bogstie said. 
+
+“We intend to maintain a competitive contracting environment throughout our entire program. This means full and open competitions, releasing RFPs [requests for proposals] for each spiral of capability which we call Epochs, and centering on fixed price contracts.”
+
+“This will allow us to increase the pool of vendors and deliver our system at an affordable price,” Bogstie insisted. “Every three years we will deliver several planes of satellites to build out or enhance our constellation.”
+
+A draft request for proposals is scheduled to go out in early 2024 for Epoch 2 satellites and a final RFP later in the year. 
+
+L3Harris eyes Epoch 2
+
+L3Harris has won a contract to only develop a digital prototype, but is positioning to compete for an Epoch 2 satellite production contract, said Geoff Adams, the company’s senior mission architect for missile defense.
+
+1234

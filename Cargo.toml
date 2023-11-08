@@ -1,0 +1,28 @@
+[package]
+name = "wasm-tasks"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+# wasmtime = { version = "14.0.4", optional = true }
+# anyhow = { version = "1.0.75", optional = true }
+
+# wasmtime = "14.0.4"
+# wasmtime-wasi = { version = "14.0.4", default-features = true, featues = [
+#     "exit",
+# ] }
+wasmedge_wasi_socket = { version = "0.5.1", optional = true }
+serde_json = "1.0"
+# wasmtime-wasi = "14.0.4"
+# anyhow = "1.0.75"
+# cap-net-ext = { version = "2.0.0", optional = true }
+
+
+# [lib]
+# crate-type = ["cdylib", "rlib"]
+
+[features]
+wasi = ["dep:wasmedge_wasi_socket"]
+# wasmtime = ["dep:wasmtime", "dep:anyhow"]
