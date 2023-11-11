@@ -5,7 +5,7 @@ use std::net::TcpStream;
 use std::thread;
 
 // native TCP client
-#[cfg(not(feature = "wasi"))]
+#[cfg(not(target_arch = "wasm32"))]
 pub fn execute(host_addr: &str, file_path: &str) {
     // Connect to the server
     let mut stream = match TcpStream::connect(host_addr) {
@@ -33,7 +33,7 @@ pub fn execute(host_addr: &str, file_path: &str) {
 }
 
 // WASI TCP client
-#[cfg(feature = "wasi")]
+#[cfg(target_arch = "wasm32")]
 pub fn execute(host_addr: &str, file_path: &str) {
     use wasmedge_wasi_socket::{Shutdown, TcpStream as WasiTcpStream};
 

@@ -1,8 +1,15 @@
 use std::env;
 
-mod coding;
-mod io;
+#[cfg(feature = "mm")]
 mod mm;
+
+#[cfg(feature = "coding")]
+mod coding;
+
+#[cfg(feature = "io")]
+mod io;
+
+#[cfg(feature = "networking")]
 mod networking;
 
 fn main() {
@@ -10,6 +17,7 @@ fn main() {
     let task = &args[1];
 
     match task.as_str() {
+        #[cfg(feature = "mm")]
         "mm" => {
             if args.len() != 8 {
                 println!(
@@ -34,6 +42,8 @@ fn main() {
                 b_cols,
             )
         }
+
+        #[cfg(feature = "coding")]
         "coding" => {
             if args.len() != 4 {
                 println!("usage: coding input_file_path, output_file_path");
@@ -45,6 +55,8 @@ fn main() {
 
             coding::execute(input_file_path, output_file_path);
         }
+
+        #[cfg(feature = "io")]
         "io" => {
             if args.len() != 4 {
                 println!("usage: io input_file_path, output_file_path");
@@ -56,6 +68,8 @@ fn main() {
 
             io::execute(input_file_path, output_file_path);
         }
+
+        #[cfg(feature = "networking")]
         "networking" => {
             if args.len() != 4 {
                 println!("usage: networking host_addr, file_path");
@@ -67,6 +81,8 @@ fn main() {
 
             networking::execute(host_addr, file_path);
         }
+
+        #[cfg(feature = "networking")]
         "tcp-server" => {
             if args.len() != 3 {
                 println!("usage: tcp-server host_addr");
