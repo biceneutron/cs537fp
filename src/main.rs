@@ -12,6 +12,12 @@ mod io;
 #[cfg(feature = "networking")]
 mod networking;
 
+// #NOTE To use `perf record` and `perf report` to analyze the execution time of the task function, we need to tear down
+// the execute() of each task module and put the code in main(), so perf can catch the information of the actual task
+// function excluding read and write. (e.g. the current "mm" case)
+//
+// But if we just use the std::time to time the task function, we can leave the code in the module, time the task function
+// there, and just call execute() in main.
 fn main() {
     let args: Vec<String> = env::args().collect();
     let task = &args[1];
@@ -19,6 +25,8 @@ fn main() {
     match task.as_str() {
         #[cfg(feature = "mm")]
         "mm" => {
+            use std::time::Instant;
+
             if args.len() != 8 {
                 println!(
                     "usage: mm a_file_path, b_file_path, result_file_path, a_rows, a_cols, b_cols"
@@ -46,12 +54,15 @@ fn main() {
 
             // multiplication
             let mut result = vec![vec![0.0; b[0].len()]; a.len()];
+
+            let start = Instant::now();
             mm::multiply_matrices(&a, &b, &mut result);
+            let duration = start.elapsed();
 
             // write
             mm::write_to_file(result, result_file_path);
 
-            println!("Done.");
+            println!("Done. {:?}", duration);
         }
 
         #[cfg(feature = "coding")]

@@ -1,26 +1,26 @@
 use std::fs;
 use std::io::{BufRead, BufReader, Write};
 
-pub fn execute(
-    a_file_path: &str,
-    b_file_path: &str,
-    result_file_path: &str,
-    a_rows: usize,
-    a_cols: usize,
-    b_cols: usize,
-) {
-    // read data
-    let (a, b) = read_matrices(a_file_path, b_file_path, a_rows, a_cols, b_cols);
+// pub fn execute(
+//     a_file_path: &str,
+//     b_file_path: &str,
+//     result_file_path: &str,
+//     a_rows: usize,
+//     a_cols: usize,
+//     b_cols: usize,
+// ) {
+//     // read data
+//     let (a, b) = read_matrices(a_file_path, b_file_path, a_rows, a_cols, b_cols);
 
-    // multiplication
-    let mut result = vec![vec![0.0; b[0].len()]; a.len()];
-    multiply_matrices(&a, &b, &mut result);
+//     // multiplication
+//     let mut result = vec![vec![0.0; b[0].len()]; a.len()];
+//     multiply_matrices(&a, &b, &mut result);
 
-    // write
-    write_to_file(result, result_file_path);
+//     // write
+//     write_to_file(result, result_file_path);
 
-    println!("Done.");
-}
+//     println!("Done.");
+// }
 
 pub fn read_matrices(
     a_file_path: &str,

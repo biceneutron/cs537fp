@@ -1,6 +1,7 @@
 use std::collections::HashMap;
 use std::fs::File;
 use std::io::{Read, Write};
+use std::time::Instant;
 
 pub struct Node {
     freq: i32,
@@ -30,18 +31,22 @@ pub fn execute(input_file_path: &str, output_file_path: &str) {
         Err(e) => panic!("{}", e),
     };
 
+    let start = Instant::now();
+
     let h = frequency(&input);
     let root = encode(h);
 
     let mut code_table: HashMap<char, String> = HashMap::new();
     assign_codes(&root, &mut code_table, "".to_string());
 
+    let duration = start.elapsed();
+
     // write
     let serialized = serde_json::to_string(&code_table).unwrap();
     let mut output = File::create(output_file_path).unwrap();
     output.write_all(serialized.as_bytes()).unwrap();
 
-    println!("Done.");
+    println!("Done. {:?}", duration);
 }
 
 fn read_file_to_string(file_path: &str) -> Result<String, std::io::Error> {

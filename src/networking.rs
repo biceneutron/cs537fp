@@ -3,10 +3,13 @@ use std::io::{Read, Write};
 use std::net::TcpListener;
 use std::net::TcpStream;
 use std::thread;
+use std::time::Instant;
 
 // native TCP client
 #[cfg(not(target_arch = "wasm32"))]
 pub fn execute(host_addr: &str, file_path: &str) {
+    let start = Instant::now();
+
     // Connect to the server
     let mut stream = match TcpStream::connect(host_addr) {
         Ok(s) => s,
@@ -29,13 +32,16 @@ pub fn execute(host_addr: &str, file_path: &str) {
         stream.write_all(&buffer[0..bytes_read]).unwrap();
     }
 
-    println!("Done.");
+    let duration = start.elapsed();
+    println!("Done. {:?}", duration);
 }
 
 // WASI TCP client
 #[cfg(target_arch = "wasm32")]
 pub fn execute(host_addr: &str, file_path: &str) {
     use wasmedge_wasi_socket::{Shutdown, TcpStream as WasiTcpStream};
+
+    let start = Instant::now();
 
     let mut stream = WasiTcpStream::connect(host_addr).unwrap();
 
@@ -56,7 +62,9 @@ pub fn execute(host_addr: &str, file_path: &str) {
     }
 
     stream.shutdown(Shutdown::Both).unwrap();
-    println!("Done.");
+
+    let duration = start.elapsed();
+    println!("Done. {:?}", duration);
 }
 
 fn handle_client(mut stream: TcpStream) {
