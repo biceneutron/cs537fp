@@ -53,7 +53,7 @@ $ echo 0 > /proc/sys/kernel/kptr_restrict
 $ exit
 ```
 
-### Compilation Time
+### [Compilation Time](https://doc.rust-lang.org/nightly/cargo/reference/timings.html)
 Use the `--timings` flag when compiling the Rust code:
 ```
 cargo build --release --timings
