@@ -10,26 +10,29 @@ pub fn execute(
     b_cols: usize,
 ) {
     // read data
+    let (a, b) = read_matrices(a_file_path, b_file_path, a_rows, a_cols, b_cols);
+
+    // multiplication
+    let mut result = vec![vec![0.0; b[0].len()]; a.len()];
+    multiply_matrices(&a, &b, &mut result);
+
+    // write
+    write_to_file(result, result_file_path);
+
+    println!("Done.");
+}
+
+fn read_matrices(
+    a_file_path: &str,
+    b_file_path: &str,
+    a_rows: usize,
+    a_cols: usize,
+    b_cols: usize,
+) -> (Vec<Vec<f64>>, Vec<Vec<f64>>) {
     let matrix_a: Vec<Vec<f64>> = read_matrix_from_file(a_file_path, a_rows, a_cols);
     let matrix_b: Vec<Vec<f64>> = read_matrix_from_file(b_file_path, a_cols, b_cols);
 
-    // multiplication
-    let mut result = vec![vec![0.0; matrix_b[0].len()]; matrix_a.len()];
-    multiply_matrices(&matrix_a, &matrix_b, &mut result);
-
-    // write
-    let mut output_file = fs::File::create(result_file_path).expect("should open file");
-    for row in result {
-        let row_string = row
-            .iter()
-            .map(|x| x.to_string())
-            .collect::<Vec<String>>()
-            .join(" ");
-        writeln!(output_file, "{}", row_string).expect("write should succeed");
-    }
-
-    // println!("{:?}", result);
-    println!("Done.");
+    (matrix_a, matrix_b)
 }
 
 fn read_matrix_from_file(file_path: &str, rows: usize, cols: usize) -> Vec<Vec<f64>> {
@@ -68,5 +71,17 @@ fn multiply_matrices(
                 result[i][j] += matrix_a[i][k] * matrix_b[k][j];
             }
         }
+    }
+}
+
+fn write_to_file(result: Vec<Vec<f64>>, result_file_path: &str) {
+    let mut output_file = fs::File::create(result_file_path).expect("should open file");
+    for row in result {
+        let row_string = row
+            .iter()
+            .map(|x| x.to_string())
+            .collect::<Vec<String>>()
+            .join(" ");
+        writeln!(output_file, "{}", row_string).expect("write should succeed");
     }
 }
