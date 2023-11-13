@@ -33,14 +33,25 @@ fn main() {
             let a_cols = args[6].parse::<usize>().unwrap();
             let b_cols = args[7].parse::<usize>().unwrap();
 
-            mm::execute(
-                a_file_path,
-                b_file_path,
-                result_file_path,
-                a_rows,
-                a_cols,
-                b_cols,
-            )
+            // mm::execute(
+            //     a_file_path,
+            //     b_file_path,
+            //     result_file_path,
+            //     a_rows,
+            //     a_cols,
+            //     b_cols,
+            // )
+            // read data
+            let (a, b) = mm::read_matrices(a_file_path, b_file_path, a_rows, a_cols, b_cols);
+
+            // multiplication
+            let mut result = vec![vec![0.0; b[0].len()]; a.len()];
+            mm::multiply_matrices(&a, &b, &mut result);
+
+            // write
+            mm::write_to_file(result, result_file_path);
+
+            println!("Done.");
         }
 
         #[cfg(feature = "coding")]

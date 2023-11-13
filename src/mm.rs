@@ -22,7 +22,7 @@ pub fn execute(
     println!("Done.");
 }
 
-fn read_matrices(
+pub fn read_matrices(
     a_file_path: &str,
     b_file_path: &str,
     a_rows: usize,
@@ -54,7 +54,7 @@ fn read_matrix_from_file(file_path: &str, rows: usize, cols: usize) -> Vec<Vec<f
     matrix
 }
 
-fn multiply_matrices(
+pub fn multiply_matrices(
     matrix_a: &Vec<Vec<f64>>,
     matrix_b: &Vec<Vec<f64>>,
     result: &mut Vec<Vec<f64>>,
@@ -74,7 +74,7 @@ fn multiply_matrices(
     }
 }
 
-fn write_to_file(result: Vec<Vec<f64>>, result_file_path: &str) {
+pub fn write_to_file(result: Vec<Vec<f64>>, result_file_path: &str) {
     let mut output_file = fs::File::create(result_file_path).expect("should open file");
     for row in result {
         let row_string = row
