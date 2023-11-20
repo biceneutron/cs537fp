@@ -82,18 +82,22 @@ build-wasi:
 	cargo clean
 	cargo build --target wasm32-wasi --features $(task) --release --timings
 
-# build-android: 
-# 	rm -rf bin/
-# 	mkdir bin/
-# 	$(MAKE) build-wasi task=mm
-# 	cp ./target/wasm32-wasi/release/cs537fp.wasm bin/mm.wasm
-# 	$(MAKE) build-wasi task=coding
-# 	cp ./target/wasm32-wasi/release/cs537fp.wasm bin/coding.wasm
-# 	$(MAKE) build-wasi task=io
-# 	cp ./target/wasm32-wasi/release/cs537fp.wasm bin/io.wasm
-# 	$(MAKE) build-wasi task=networking
-# 	cp ./target/wasm32-wasi/release/cs537fp.wasm bin/networking.wasm
-# 	cargo build --features networking --release
+build-android: 
+	rm -rf android/bin/
+	mkdir android/bin/
+	$(MAKE) build-wasi task=mm
+	cp ./target/wasm32-wasi/release/cs537fp.wasm android/bin/mm.wasm
+	$(MAKE) build-wasi task=coding
+	cp ./target/wasm32-wasi/release/cs537fp.wasm android/bin/coding.wasm
+	$(MAKE) build-wasi task=io
+	cp ./target/wasm32-wasi/release/cs537fp.wasm android/bin/io.wasm
+#	$(MAKE) build-wasi task=networking
+#	cp ./target/wasm32-wasi/release/cs537fp.wasm android/bin/networking.wasm
+#	cargo build --features tcp-server --release
+#	cp ./target/release/cs537fp android/bin/tcp-server
+
+push-android:
+	./adb push ./android ./data /data/local/tmp
 
 clean-output:
 	rm -f ./data/*/out_*.txt

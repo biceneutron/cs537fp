@@ -25,6 +25,43 @@ $ source $HOME/.wasmedge/env
 $ apt-get install linux-tools-common linux-tools-generic
 ```
 
+## Test on Android Phones
+### [Build WasmEdge for Android](https://wasmedge.org/docs/contribute/source/os/android/build/)
+Note 1: Android NDK and CMake should be installed via Android Studio. See [this](https://developer.android.com/studio/projects/install-ndk#specific-version) for how to do that. Then `ANDROID_NDK_HOME` should be set as
+```
+export ANDROID_NDK_HOME=/Users/[username]/Library/Android/sdk/ndk/23.1.7779620
+```
+
+acording to [this](https://stackoverflow.com/questions/56228822/ndk-does-not-contain-any-platforms).
+
+Note 2: If it shows `CANNOT LINK EXECUTABLE` error when running `wasmedge` in Android shell, re-build with `-DWASMEDGE_BUILD_STATIC_LIB=ON -DWASMEDGE_LINK_TOOLS_STATIC=ON` flags added in line 14 of `build_for_android.sh`. (See [this](https://github.com/WasmEdge/WasmEdge/issues/2639#issuecomment-1703035777))
+
+
+### Push .wasm and other auxiliaries onto Android
+After pushing the `wasmedge` Android build onto the phone, do
+```
+make build-android
+adb push ./android ./data /data/local/tmp
+```
+
+### Run the tasks
+
+```
+adb shell
+
+# In the Android shell
+cd /data/local/tmp/
+
+# Run matrices multiplication with dimension 100 x 100 x 100
+sh android/run-wasi.sh mm 100
+
+# Run Huffman encoding to a 1000-word article
+sh android/run-wasi.sh coding 1000
+
+# Run IO task with a 1000-word article
+sh android/run-wasi.sh io 100
+```
+
 ## Profiling
 ### Execution Time
 Run
