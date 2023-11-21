@@ -32,14 +32,14 @@ Follow [this example](https://github.com/ssrlive/rust_on_android) by ssrlive. Th
 
 Open the project with Android Studio and install the tools shown in the picture in the example repo
 
-Note 1: For the `NDK is not installed` error, install the NDK version specified in `app/build.gradle`
+- Note 1: For the `NDK is not installed` error, install the NDK version specified in `app/build.gradle`
 ```gradle
 android {
     ndkVersion '25.1.8937393'
 }
 ```
 
-Note 2: For the `linker-wrapper.sh: line 4: python: command not found` error, set the environment variable:
+- Note 2: For the `linker-wrapper.sh: line 4: python: command not found` error, set the environment variable:
 ```
 $ export RUST_ANDROID_GRADLE_PYTHON_COMMAND=python3
 ```
@@ -54,14 +54,14 @@ Then plug the Android phone to the laptop and run the app via Android Studio. We
 
 ## WebAssembly
 ### [Build WasmEdge for Android](https://wasmedge.org/docs/contribute/source/os/android/build/)
-Note 1: Android NDK and CMake should be installed via Android Studio. See [this](https://developer.android.com/studio/projects/install-ndk#specific-version) for how to do that. Then `ANDROID_NDK_HOME` should be set as
+- Note 1: Android NDK and CMake should be installed via Android Studio. See [this](https://developer.android.com/studio/projects/install-ndk#specific-version) for how to do that. Then `ANDROID_NDK_HOME` should be set as
 ```
 $ export ANDROID_NDK_HOME=/Users/[username]/Library/Android/sdk/ndk/23.1.7779620
 ```
 
 acording to [this](https://stackoverflow.com/questions/56228822/ndk-does-not-contain-any-platforms).
 
-Note 2: If it shows `CANNOT LINK EXECUTABLE` error when running `wasmedge` in Android shell, re-build with `-DWASMEDGE_BUILD_STATIC_LIB=ON -DWASMEDGE_LINK_TOOLS_STATIC=ON` flags added in line 14 of `build_for_android.sh`. (See [this](https://github.com/WasmEdge/WasmEdge/issues/2639#issuecomment-1703035777))
+- Note 2: If it shows `CANNOT LINK EXECUTABLE` error when running `wasmedge` in Android shell, re-build with `-DWASMEDGE_BUILD_STATIC_LIB=ON -DWASMEDGE_LINK_TOOLS_STATIC=ON` flags added in line 14 of `build_for_android.sh`. (See [this](https://github.com/WasmEdge/WasmEdge/issues/2639#issuecomment-1703035777))
 
 
 ### Push .wasm and other auxiliaries onto Android
