@@ -30,16 +30,21 @@ $ apt-get install linux-tools-common linux-tools-generic
 ### Build the app for Android
 Follow [this example](https://github.com/ssrlive/rust_on_android) by ssrlive. This example uses [rust-android-gradle](https://github.com/mozilla/rust-android-gradle) plugin, which cross-compiles Rust Cargo project for Android targets so we can run Rust code in Android apps.
 
-Open the project with Android Studio and install the tools shown in the picture in the example repo
+Open the project with Android Studio and install the tools shown in the picture in the example repo. Then build the app per the instruction.
 
-- Note 1: For the `NDK is not installed` error, install the NDK version specified in `app/build.gradle`
+- Note 1: Before running `gradlew`, we may need to set the execution flag for it.
+```
+$ chmod +x gradlew
+```
+
+- Note 2: For the `NDK is not installed` error, install the NDK version specified in `app/build.gradle`
 ```gradle
 android {
     ndkVersion '25.1.8937393'
 }
 ```
 
-- Note 2: For the `linker-wrapper.sh: line 4: python: command not found` error, set the environment variable:
+- Note 3: For the `linker-wrapper.sh: line 4: python: command not found` error, set the environment variable:
 ```
 $ export RUST_ANDROID_GRADLE_PYTHON_COMMAND=python3
 ```
