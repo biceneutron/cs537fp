@@ -1,5 +1,5 @@
 # Get Started
-1. Install Rust tool chain
+1. Install Rust toolchain
 ```
 $ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
