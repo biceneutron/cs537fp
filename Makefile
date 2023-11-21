@@ -76,25 +76,51 @@ HOST_ADDR := 127.0.0.1:8080
 
 build-native: 
 	cargo clean
-	cargo build --features $(task) --release --timings
+	rm -rf bin/ timings/
+	mkdir bin/ timings/
+
+	cargo build --features mm --release --timings
+	cp target/release/cs537fp bin/mm-native
+	cp target/cargo-timings/cargo-timing.html timings/mm-native-cargo-timing.html
+
+	cargo build --features coding --release --timings
+	cp target/release/cs537fp bin/coding-native
+	cp target/cargo-timings/cargo-timing.html timings/coding-native-cargo-timing.html
+
+	cargo build --features io --release --timings
+	cp target/release/cs537fp bin/io-native
+	cp target/cargo-timings/cargo-timing.html timings/io-native-cargo-timing.html
+
+	cargo build --features networking --release --timings
+	cp target/release/cs537fp bin/networking-native
+	cp target/cargo-timings/cargo-timing.html timings/networking-native-cargo-timing.html
+
+	cargo build --features tcp-server --release
+	cp target/release/cs537fp bin/tcp-server
 
 build-wasi:
 	cargo clean
-	cargo build --target wasm32-wasi --features $(task) --release --timings
+	rm -rf bin/ timings/
+	mkdir bin/ timings/
 
-build-android: 
-	rm -rf android/bin/
-	mkdir android/bin/
-	$(MAKE) build-wasi task=mm
-	cp ./target/wasm32-wasi/release/cs537fp.wasm android/bin/mm.wasm
-	$(MAKE) build-wasi task=coding
-	cp ./target/wasm32-wasi/release/cs537fp.wasm android/bin/coding.wasm
-	$(MAKE) build-wasi task=io
-	cp ./target/wasm32-wasi/release/cs537fp.wasm android/bin/io.wasm
-#	$(MAKE) build-wasi task=networking
-#	cp ./target/wasm32-wasi/release/cs537fp.wasm android/bin/networking.wasm
-#	cargo build --features tcp-server --release
-#	cp ./target/release/cs537fp android/bin/tcp-server
+	cargo build --target wasm32-wasi --features mm --release --timings
+	cp target/wasm32-wasi/release/cs537fp.wasm bin/mm-wasi.wasm
+	cp target/cargo-timings/cargo-timing.html timings/mm-wasi-cargo-timing.html
+
+	cargo build --target wasm32-wasi --features coding --release --timings
+	cp target/wasm32-wasi/release/cs537fp.wasm bin/coding-wasi.wasm
+	cp target/cargo-timings/cargo-timing.html timings/coding-wasi-cargo-timing.html
+
+	cargo build --target wasm32-wasi --features io --release --timings
+	cp target/wasm32-wasi/release/cs537fp.wasm bin/io-wasi.wasm
+	cp target/cargo-timings/cargo-timing.html timings/io-wasi-cargo-timing.html
+
+	cargo build --target wasm32-wasi --features networking --release --timings
+	cp target/wasm32-wasi/release/cs537fp.wasm bin/networking-wasi.wasm
+	cp target/cargo-timings/cargo-timing.html timings/networking-wasi-cargo-timing.html
+
+	cargo build --features tcp-server --release
+	cp target/release/cs537fp bin/tcp-server
 
 push-android:
 	./adb push ./android ./data /data/local/tmp
@@ -108,128 +134,128 @@ clean-output:
 
 # matrix multiplication
 run-mm-native-10:
-	./target/release/cs537fp \
+	bin/mm-native \
 	./data/mm/10-10-10/a.txt ./data/mm/10-10-10/b.txt ./data/mm/10-10-10/out.txt 10 10 10
 
 run-mm-native-50:
-	./target/release/cs537fp \
+	bin/mm-native \
 	./data/mm/50-50-50/a.txt ./data/mm/50-50-50/b.txt ./data/mm/50-50-50/out.txt 50 50 50
 
 run-mm-native-100:
-	./target/release/cs537fp \
+	bin/mm-native \
 	./data/mm/100-100-100/a.txt ./data/mm/100-100-100/b.txt ./data/mm/100-100-100/out.txt 100 100 100
 
 run-mm-native-500:
-	./target/release/cs537fp \
+	bin/mm-native \
 	./data/mm/500-500-500/a.txt ./data/mm/500-500-500/b.txt ./data/mm/500-500-500/out.txt 500 500 500
 
 run-mm-native-1000:
-	./target/release/cs537fp \
+	bin/mm-native \
 	./data/mm/1000-1000-1000/a.txt ./data/mm/1000-1000-1000/b.txt ./data/mm/1000-1000-1000/out.txt 1000 1000 1000
 
 run-mm-wasi-10:
-	wasmtime --wasi common=y --dir . ./target/wasm32-wasi/release/cs537fp.wasm \
+	wasmtime --wasi common=y --dir . bin/mm-wasi.wasm \
 	./data/mm/10-10-10/a.txt ./data/mm/10-10-10/b.txt ./data/mm/10-10-10/out.txt 10 10 10
 
 run-mm-wasi-50:
-	wasmtime --dir . ./target/wasm32-wasi/release/cs537fp.wasm \
+	wasmtime --dir . bin/mm-wasi.wasm \
 	./data/mm/50-50-50/a.txt ./data/mm/50-50-50/b.txt ./data/mm/50-50-50/out.txt 50 50 50
 
 run-mm-wasi-100:
-	wasmtime --dir . ./target/wasm32-wasi/release/cs537fp.wasm \
+	wasmtime --dir . bin/mm-wasi.wasm \
 	./data/mm/100-100-100/a.txt ./data/mm/100-100-100/b.txt ./data/mm/100-100-100/out.txt 100 100 100
 
 run-mm-wasi-500:
-	wasmtime --dir . ./target/wasm32-wasi/release/cs537fp.wasm \
+	wasmtime --dir . bin/mm-wasi.wasm \
 	./data/mm/500-500-500/a.txt ./data/mm/500-500-500/b.txt ./data/mm/500-500-500/out.txt 500 500 500
 
 run-mm-wasi-1000:
-	wasmtime --dir . ./target/wasm32-wasi/release/cs537fp.wasm \
+	wasmtime --dir . bin/mm-wasi.wasm \
 	./data/mm/1000-1000-1000/a.txt ./data/mm/1000-1000-1000/b.txt ./data/mm/1000-1000-1000/out.txt 1000 1000 1000
 
 
 # Huffman coding
 run-coding-native-1000:
-	./target/release/cs537fp \
+	bin/coding-native \
 	./data/coding/1000.txt ./data/coding/out_1000.json
 
 run-coding-native-5000:
-	./target/release/cs537fp \
+	bin/coding-native \
 	./data/coding/5000.txt ./data/coding/out_5000.json
 
 run-coding-native-10000:
-	./target/release/cs537fp \
+	bin/coding-native \
 	./data/coding/10000.txt ./data/coding/out_10000.json
 
 run-coding-native-15000:
-	./target/release/cs537fp \
+	bin/coding-native \
 	./data/coding/15000.txt ./data/coding/out_15000.json
 
 run-coding-native-20000:
-	./target/release/cs537fp \
+	bin/coding-native \
 	./data/coding/20000.txt ./data/coding/out_20000.json
 
 run-coding-wasi-1000:
-	wasmtime --dir . ./target/wasm32-wasi/release/cs537fp.wasm \
+	wasmtime --dir . bin/coding-wasi.wasm \
 	./data/coding/1000.txt ./data/coding/out_1000.json
 
 run-coding-wasi-5000:
-	wasmtime --dir . ./target/wasm32-wasi/release/cs537fp.wasm \
+	wasmtime --dir . bin/coding-wasi.wasm \
 	./data/coding/5000.txt ./data/coding/out_5000.json
 
 run-coding-wasi-10000:
-	wasmtime --dir . ./target/wasm32-wasi/release/cs537fp.wasm \
+	wasmtime --dir . bin/coding-wasi.wasm \
 	./data/coding/10000.txt ./data/coding/out_10000.json
 
 run-coding-wasi-15000:
-	wasmtime --dir . ./target/wasm32-wasi/release/cs537fp.wasm \
+	wasmtime --dir . bin/coding-wasi.wasm \
 	./data/coding/15000.txt ./data/coding/out_15000.json
 
 run-coding-wasi-20000:
-	wasmtime --dir . ./target/wasm32-wasi/release/cs537fp.wasm \
+	wasmtime --dir . bin/coding-wasi.wasm \
 	./data/coding/20000.txt ./data/coding/out_20000.json
 
 
 # IO
 # IO uses the intput datasets from the Huffman coding experiment
 run-io-native-1000:
-	./target/release/cs537fp \
+	bin/io-native \
 	./data/coding/1000.txt ./data/io/out_1000.txt
 
 run-io-native-5000:
-	./target/release/cs537fp \
+	bin/io-native \
 	./data/coding/5000.txt ./data/io/out_5000.txt
 
 run-io-native-10000:
-	./target/release/cs537fp \
+	bin/io-native \
 	./data/coding/10000.txt ./data/io/out_10000.txt
 
 run-io-native-15000:
-	./target/release/cs537fp \
+	bin/io-native \
 	./data/coding/15000.txt ./data/io/out_15000.txt
 
 run-io-native-20000:
-	./target/release/cs537fp \
+	bin/io-native \
 	./data/coding/20000.txt ./data/io/out_20000.txt
 
 run-io-wasi-1000:
-	wasmtime --dir . ./target/wasm32-wasi/release/cs537fp.wasm \
+	wasmtime --dir . bin/io-wasi.wasm \
 	./data/coding/1000.txt ./data/io/out_1000.txt
 
 run-io-wasi-5000:
-	wasmtime --dir . ./target/wasm32-wasi/release/cs537fp.wasm \
+	wasmtime --dir . bin/io-wasi.wasm \
 	./data/coding/5000.txt ./data/io/out_5000.txt
 
 run-io-wasi-10000:
-	wasmtime --dir . ./target/wasm32-wasi/release/cs537fp.wasm \
+	wasmtime --dir . bin/io-wasi.wasm \
 	./data/coding/10000.txt ./data/io/out_10000.txt
 
 run-io-wasi-15000:
-	wasmtime --dir . ./target/wasm32-wasi/release/cs537fp.wasm \
+	wasmtime --dir . bin/io-wasi.wasm \
 	./data/coding/15000.txt ./data/io/out_15000.txt
 
 run-io-wasi-20000:
-	wasmtime --dir . ./target/wasm32-wasi/release/cs537fp.wasm \
+	wasmtime --dir . bin/io-wasi.wasm \
 	./data/coding/20000.txt ./data/io/out_20000.txt
 
 
@@ -237,46 +263,45 @@ run-io-wasi-20000:
 # Networking
 # Networking uses the intput datasets from the Huffman coding experiment
 run-server:
-	cargo build --features tcp-server --release
-	./target/release/cs537fp \
+	bin/tcp-server \
 	127.0.0.1:8080
 
 run-networking-native-1000:
-	./target/release/cs537fp \
+	bin/networking-native \
 	 $(HOST_ADDR) ./data/coding/1000.txt
 
 run-networking-native-5000:
-	./target/release/cs537fp \
+	bin/networking-native \
 	$(HOST_ADDR) ./data/coding/5000.txt
 
 run-networking-native-10000:
-	./target/release/cs537fp \
+	bin/networking-native \
 	$(HOST_ADDR) ./data/coding/10000.txt
 
 run-networking-native-15000:
-	./target/release/cs537fp \
+	bin/networking-native \
 	$(HOST_ADDR) ./data/coding/15000.txt
 
 run-networking-native-20000:
-	./target/release/cs537fp \
+	bin/networking-native \
 	$(HOST_ADDR) ./data/coding/20000.txt
 
 run-networking-wasi-1000:
-	wasmedge --dir . ./target/wasm32-wasi/release/cs537fp.wasm \
+	wasmedge --dir . bin/networking-wasi.wasm \
 	$(HOST_ADDR) ./data/coding/1000.txt
 
 run-networking-wasi-5000:
-	wasmedge --dir . ./target/wasm32-wasi/release/cs537fp.wasm \
+	wasmedge --dir . bin/networking-wasi.wasm \
 	$(HOST_ADDR) ./data/coding/5000.txt
 
 run-networking-wasi-10000:
-	wasmedge --dir . ./target/wasm32-wasi/release/cs537fp.wasm \
+	wasmedge --dir . bin/networking-wasi.wasm \
 	$(HOST_ADDR) ./data/coding/10000.txt
 
 run-networking-wasi-15000:
-	wasmedge --dir . ./target/wasm32-wasi/release/cs537fp.wasm \
+	wasmedge --dir . bin/networking-wasi.wasm \
 	$(HOST_ADDR) ./data/coding/15000.txt
 
 run-networking-wasi-20000:
-	wasmedge --dir . ./target/wasm32-wasi/release/cs537fp.wasm \
+	wasmedge --dir . bin/networking-wasi.wasm \
 	$(HOST_ADDR) ./data/coding/20000.txt

@@ -1,4 +1,4 @@
-## Get Started
+# Get Started
 1. Install Rust tool chain
 ```
 $ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -25,7 +25,10 @@ $ source $HOME/.wasmedge/env
 $ apt-get install linux-tools-common linux-tools-generic
 ```
 
-## Test on Android Phones
+# Test on Android Phones
+## Rust
+
+## WebAssembly
 ### [Build WasmEdge for Android](https://wasmedge.org/docs/contribute/source/os/android/build/)
 Note 1: Android NDK and CMake should be installed via Android Studio. See [this](https://developer.android.com/studio/projects/install-ndk#specific-version) for how to do that. Then `ANDROID_NDK_HOME` should be set as
 ```
@@ -41,7 +44,7 @@ Note 2: If it shows `CANNOT LINK EXECUTABLE` error when running `wasmedge` in An
 After pushing the `wasmedge` Android build onto the phone, do
 ```
 make build-android
-adb push ./android ./data /data/local/tmp
+adb push bin data run-wasi.sh /data/local/tmp
 ```
 
 ### Run the tasks
@@ -53,17 +56,17 @@ adb shell
 cd /data/local/tmp/
 
 # Run matrices multiplication with dimension 100 x 100 x 100
-sh android/run-wasi.sh mm 100
+sh run-wasi.sh mm 100
 
 # Run Huffman encoding to a 1000-word article
-sh android/run-wasi.sh coding 1000
+sh run-wasi.sh coding 1000
 
 # Run IO task with a 1000-word article
-sh android/run-wasi.sh io 100
+sh run-wasi.sh io 100
 ```
 
-## Profiling
-### Execution Time
+# Profiling
+## Execution Time
 Run
 ```
 perf record ./path/to/the/binary
@@ -90,7 +93,7 @@ $ echo 0 > /proc/sys/kernel/kptr_restrict
 $ exit
 ```
 
-### [Compilation Time](https://doc.rust-lang.org/nightly/cargo/reference/timings.html)
+## [Compilation Time](https://doc.rust-lang.org/nightly/cargo/reference/timings.html)
 Use the `--timings` flag when compiling the Rust code:
 ```
 cargo build --release --timings
