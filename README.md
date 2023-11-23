@@ -6,7 +6,7 @@ $ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 2. Add wasm32-wasi as a target
 
 ```
-$ rustc add wasm32-wasi
+$ rustup target add wasm32-wasi
 ```
 
 3. [Install wasmtime](https://docs.wasmtime.dev/cli-install.html)
